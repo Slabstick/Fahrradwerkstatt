@@ -105,7 +105,7 @@ public class Werkstatt {
     }
 
     public static void analyzeYear(WorkYear year){
-        List<Job> list = year.getFinishedYear();
+        List<Job> list = year.finishedYear();
         int longestWaitingTime = 0;
         Job longestWaitingJob = list.get(0);
         int cumulatedWaitingTime = 0;
@@ -132,19 +132,19 @@ public class Werkstatt {
         averageWaitingTime = cumulatedWaitingTime/list.size();
 
         System.out.println("---------------------------------------------------------------------------");
-        System.out.println("Verfahren: " + (year.isSorted() ? "Sortiert" : "Unsortiert"));
+        System.out.println("Verfahren: " + (year.sorted() ? "Sortiert" : "Unsortiert"));
         System.out.println("Anzahl Aufträge: " + list.size());
         System.out.println("Erledigte Aufträge: " + numberFinishedJobs);
         System.out.println("Unerledigte Aufträge: " + numberUnfinishedJobs);
         System.out.println("Dauer unerledigter Aufträge: " + toHours(workForNextYear));
-        System.out.println("Gesamte Arbeitszeit: " + toHours(year.getTotalWorkTime()));
-        System.out.println("Tatsächlich gearbeitet: " + toHours(year.getTimeWorked()));
-        System.out.println("Zeit verschwendet: " + toHours(year.getTimeWasted()));
+        System.out.println("Gesamte Arbeitszeit: " + toHours(year.totalWorkTime()));
+        System.out.println("Tatsächlich gearbeitet: " + toHours(year.timeWorked()));
+        System.out.println("Zeit verschwendet: " + toHours(year.timeWasted()));
         System.out.println("Wartezeit im Schnitt: " + toHours(averageWaitingTime));
         System.out.println("Längste Wartezeit: " + toHours(longestWaitingTime));
         System.out.println("Job mit längster Wartezeit: #" + longestWaitingJob.getIndex());
-        System.out.println("Gesamtzeit: " + toHours(year.getTotalTime()));
-        System.out.println("Freizeit: " + toHours(year.getFreeTime()));
+        System.out.println("Gesamtzeit: " + toHours(year.totalTime()));
+        System.out.println("Freizeit: " + toHours(year.freeTime()));
     }
 
     public static List<Job> readJobList(String filename) {
