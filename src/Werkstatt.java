@@ -5,6 +5,12 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+/*
+ToDo: Weitere Verfahren (nur Jobs unter bestimmter Dauer sortieren, nur an Freitagen kurze Jobs abarbeiten),
+Mehrere Mitarbeiter?
+Schaltjahre beachten
+Möglichkeit Urlaub zu nehmen?
+*/
 public class Werkstatt {
 
     public static void main(String[] args) {
