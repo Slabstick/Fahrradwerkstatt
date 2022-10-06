@@ -48,7 +48,7 @@ public class Werkstatt {
 //        Job activeJob = null; -> currentJob in Mitarbeiter Klasse
         int daysInYear = 365;
         int time = 0;
-//        int timeWasted = 0, timeWorked = 0, freeTime= 0, totalWorkTime = 0; -> Mitarbeiter Klasse
+        int timeWasted = 0, timeWorked = 0, freeTime= 0, totalWorkTime = 0; // -> Mitarbeiter Klasse
 
         // Wenn der letzte Eintrag nach dem 365sten Tag ankommt -> Schaltjahr
         if (yearList.get(yearList.size() - 1).getArrivalTime() > 525000) {
