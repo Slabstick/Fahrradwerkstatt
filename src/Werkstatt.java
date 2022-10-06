@@ -62,8 +62,9 @@ public class Werkstatt {
                 for (int minute = 0; minute < 60; minute ++) {
 
 
+
                     time ++;
-                    
+
 
                 }
 
