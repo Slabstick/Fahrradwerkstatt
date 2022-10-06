@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,16 +16,22 @@ ToDo:
 public class Werkstatt {
 
     public static void main(String[] args) {
+        Date dateStart = new Date();
+        long timeStarted = dateStart.getTime();
         String[] files = new String[] {
                 "./resources/fahrradwerkstatt0.txt",
                 "./resources/fahrradwerkstatt1.txt",
                 "./resources/fahrradwerkstatt2.txt",
                 "./resources/fahrradwerkstatt3.txt",
-                "./resources/fahrradwerkstatt4.txt",
-                "./resources/fahrradwerkstatt5.txt",
+                "./resources/fahrradwerkstatt4.txt"
         };
         workEverything(files);
+        Date dateEnd = new Date();
+        long timeEnded = dateEnd.getTime();
+        System.out.println("Das Programm hat " + (timeEnded - timeStarted) + " Millisekunden gebraucht.");
     }
+
+
 
     public static void workEverything(String[] files) {
         for(String file : files){
@@ -39,13 +46,8 @@ public class Werkstatt {
     public static WorkYear workThroughYear(List<Job> yearList, boolean sortedQueue) {
         List<Job> queue = new LinkedList<>();
         List<Job> endOfYearList = new LinkedList<>();
-        int time = 0;
-        int daysInYear = 366; // Schaltjahrabfrage einbauen;
         Job activeJob = null;
-        int timeWasted = 0;
-        int timeWorked = 0;
-        int freeTime = 0;
-        int totalWorkTime = 0;
+        int time = 0, daysInYear = 366, timeWasted = 0, timeWorked = 0, freeTime= 0, totalWorkTime = 0;
 
         for(int day = 1; day <= daysInYear; day++) { // Tage
             if(((day+1) % 7 != 0) && (day % 7 != 0)){ // Wochenenden ausgeschlossen
@@ -113,13 +115,9 @@ public class Werkstatt {
 
     public static void analyzeYear(WorkYear year){
         List<Job> list = year.finishedYear();
-        int longestWaitingTime = 0;
         Job longestWaitingJob = list.get(0);
-        int cumulatedWaitingTime = 0;
-        int averageWaitingTime;
-        int numberFinishedJobs = 0;
-        int numberUnfinishedJobs = 0;
-        int workForNextYear = 0;
+        int longestWaitingTime = 0, cumulatedWaitingTime = 0, averageWaitingTime, numberFinishedJobs = 0,
+            numberUnfinishedJobs = 0, workForNextYear = 0;
 
         for (Job job : list) {
             if (job.getWorkLeft() < 1) { // Auftrag wurde beendet
