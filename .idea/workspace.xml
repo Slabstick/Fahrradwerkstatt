@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="043ce36b-4846-4961-87fa-652dea0b694d" name="Changes" comment="Neuer Branch für Mitarbeiter Funktionalität" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="mitarbeiter" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="mitarbeiter" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/corretto-17.0.4/lib/src.zip!/java.base/java/io/BufferedReader.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-17.0.4/lib/src.zip!/java.base/java/io/Reader.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-17.0.4/lib/src.zip!/java.base/java/lang/Object.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2FAQDPNCO0agg84SYa0F5U6WMiS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/jklimczok/Documents/Work/QuinScape Azubi Projekte/Fahrradwerkstatt",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jklimczok\Documents\Work\QuinScape Azubi Projekte\Fahrradwerkstatt\oldFiles" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jklimczok\Desktop\QuinScape Azubi Projekte\Fahrradwerkstatt\oldFiles" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Werkstatt">
+    <configuration name="Benchmark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Benchmark" />
+      <module name="Fahrradwerkstatt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Fahrradwerkstatt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Werkstatt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Werkstatt" />
+      <module name="Fahrradwerkstatt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="sortedProcedure" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sortedProcedure" />
+      <module name="Fahrradwerkstatt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Fahrradwerkstatt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Fahrradwerkstatt" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Werkstatt" />
+        <item itemvalue="Application.sortedProcedure" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Benchmark" />
+        <item itemvalue="Application.Werkstatt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="043ce36b-4846-4961-87fa-652dea0b694d" name="Changes" comment="" />
+      <created>1663932288571</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663932288571</updated>
+      <workItem from="1663932289624" duration="5332000" />
+      <workItem from="1664342558274" duration="5452000" />
+      <workItem from="1664357548517" duration="19432000" />
+      <workItem from="1664429574300" duration="23434000" />
+      <workItem from="1664518179641" duration="354000" />
+      <workItem from="1664518544362" duration="9891000" />
+      <workItem from="1664861516110" duration="594000" />
+      <workItem from="1664864015299" duration="24088000" />
+      <workItem from="1664950337051" duration="2455000" />
+      <workItem from="1664962066945" duration="160000" />
+      <workItem from="1664962242864" duration="297000" />
+      <workItem from="1664962550556" duration="831000" />
+      <workItem from="1664966143987" duration="869000" />
+      <workItem from="1664970236426" duration="3591000" />
+      <workItem from="1665034815798" duration="7483000" />
+      <workItem from="1665054552388" duration="7342000" />
+      <workItem from="1665124347654" duration="85000" />
+      <workItem from="1665125047755" duration="7000" />
+      <workItem from="1665125113301" duration="90000" />
+      <workItem from="1665125226966" duration="1318000" />
+      <workItem from="1665228468045" duration="180000" />
+      <workItem from="1665380350556" duration="595000" />
+      <workItem from="1665381467793" duration="910000" />
+      <workItem from="1665384346548" duration="613000" />
+      <workItem from="1665385284988" duration="593000" />
+      <workItem from="1665483899130" duration="247000" />
+      <workItem from="1665484176028" duration="3357000" />
+    </task>
+    <task id="LOCAL-00001" summary="first push to git">
+      <created>1664890711943</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1664890711943</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first push to git">
+      <created>1664890734947</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664890734947</updated>
+    </task>
+    <task id="LOCAL-00003" summary="change WorkYear Class to Record">
+      <created>1664891183181</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664891183181</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add ToDo List to Main Method">
+      <created>1664892103331</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664892103331</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add ToDo List to Main Method">
+      <created>1664892141340</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664892141340</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add ToDo List to Main Method">
+      <created>1664892263330</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1664892263330</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Benchmark Class hinzugefügt für Testmethoden, Variablendeklarationen zusammengefasst">
+      <created>1665042077477</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1665042077477</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Neuer Branch für Mitarbeiter Funktionalität">
+      <created>1665057913281</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665057913281</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="mitarbeiter" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="mitarbeiter" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first push to git" />
+    <MESSAGE value="change WorkYear Class to Record" />
+    <MESSAGE value="add ToDo List to Main Method" />
+    <MESSAGE value="Benchmark Class hinzugefügt für Testmethoden, Variablendeklarationen zusammengefasst" />
+    <MESSAGE value="Neuer Branch für Mitarbeiter Funktionalität" />
+    <option name="LAST_COMMIT_MESSAGE" value="Neuer Branch für Mitarbeiter Funktionalität" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="9" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Fahrradwerkstatt$sortedProcedure.ic" NAME="sortedProcedure Coverage Results" MODIFIED="1664450019151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
