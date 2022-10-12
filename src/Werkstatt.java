@@ -9,9 +9,7 @@ ToDo:
     Möglichkeit Urlaub zu nehmen?
 */
 public class Werkstatt {
-
-    static List<Mitarbeiter> alleMitarbeiter = new ArrayList<>(); //
-
+    static List<Mitarbeiter> alleMitarbeiter = new ArrayList<>();
     public static void main(String[] args) {
         Date dateStart = new Date();
         long timeStarted = dateStart.getTime();
@@ -36,8 +34,6 @@ public class Werkstatt {
         System.out.println("Das Programm hat " + (timeEnded - timeStarted) + " Millisekunden gebraucht.");
     }
 
-
-
     public static void workEverything(String[] files) {
         for(String file : files){
             WorkYear finishedYear = workThroughYear(readJobList(file), false);
@@ -45,7 +41,6 @@ public class Werkstatt {
             finishedYear = workThroughYear(readJobList(file), true);
             analyzeYear(finishedYear);
         }
-
     }
 
     public static WorkYear workThroughYear(List<Job> jobList, boolean sortedQueue) {
@@ -53,7 +48,7 @@ public class Werkstatt {
         List<Job> endOfYearList = new LinkedList<>();
         int daysInYear = 365;
         int time = 0;
-        int timeWasted = 0, timeWorked = 0, freeTime= 0, totalWorkTime = 0; // -> Mitarbeiter Klasse
+        int timeWasted = 0, timeWorked = 0; // -> Mitarbeiter Klasse
 
 
 
@@ -83,13 +78,8 @@ public class Werkstatt {
                         }
                     }
                     time++;
-
-
                 }
-
             }
-
-
         }
         // Aufräumarbeiten: Alle ausstehenden Aufträge in Liste eintragen
         for (Mitarbeiter mitarbeiter : alleMitarbeiter) {
@@ -109,12 +99,7 @@ public class Werkstatt {
         if (!queue.isEmpty()) {
             endOfYearList.addAll(queue);
         }
-
-
-
-
-
-        return new WorkYear(endOfYearList, time, timeWorked, timeWasted, freeTime, totalWorkTime, sortedQueue);
+        return new WorkYear(endOfYearList, time, timeWorked, timeWasted, sortedQueue);
     }
 
     private static void queueNewJobs(List<Job> jobList, List<Job> queue, int time) {
@@ -161,14 +146,12 @@ public class Werkstatt {
         System.out.println("Unerledigte Aufträge: " + numberUnfinishedJobs);
         System.out.println("Indizes unerledigter Aufträge: " + unfinishedJobsIndizes);
         System.out.println("Dauer unerledigter Aufträge: " + toHours(workForNextYear));
-        System.out.println("Gesamte Arbeitszeit: " + toHours(year.totalWorkTime()));
         System.out.println("Tatsächlich gearbeitet: " + toHours(year.timeWorked()));
         System.out.println("Zeit verschwendet: " + toHours(year.timeWasted()));
         System.out.println("Wartezeit im Schnitt: " + toHours(averageWaitingTime));
         System.out.println("Längste Wartezeit: " + toHours(longestWaitingTime));
         System.out.println("Job mit längster Wartezeit: #" + longestWaitingJob.getIndex());
         System.out.println("Gesamtzeit: " + toHours(year.totalTime()));
-        System.out.println("Freizeit: " + toHours(year.freeTime()));
     }
 
     public static List<Job> readJobList(String filename) {
