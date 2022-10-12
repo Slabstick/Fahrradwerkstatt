@@ -13,19 +13,42 @@
     Mitarbeiter übergibt fertige Jobs an Werkstatt
  */
 
+import java.util.*;
+
 public class Mitarbeiter {
     private String name;
     private int numberWeekdays;
     private Job currentJob;
+    private int timeWorked;
+    private int timeWasted;
+    private int numberFinishedJobs;
+    private List<Job> finishedJobs;
 
     public Mitarbeiter(String name, int numberWeekdays) {
         this.name = name;
         setNumberWeekdays(numberWeekdays);
+        this.timeWorked = 0;
+        this.timeWasted = 0;
+        finishedJobs = new LinkedList<>();
+        this.numberFinishedJobs = 0;
     }
 
     public Mitarbeiter(String name) {
-        new Mitarbeiter(name, 5);
+        this(name, 5);
     }
+
+    public List<Job> getFinishedJobs() {
+        return finishedJobs;
+    }
+
+    public int getTimeWorked() {
+        return timeWorked;
+    }
+
+    public int getTimeWasted() {
+        return timeWasted;
+    }
+
 
     public String getName() {
         return name;
@@ -49,6 +72,69 @@ public class Mitarbeiter {
         this.currentJob = currentJob;
     }
 
+    public int getNumberFinishedJobs() {
+        return numberFinishedJobs;
+    }
 
+    public void setNumberFinishedJobs(int numberFinishedJobs) {
+        this.numberFinishedJobs = numberFinishedJobs;
+    }
 
+    public void cleanUp(){
+        finishedJobs.clear();
+        setCurrentJob(null);
+        setNumberFinishedJobs(0);
+    }
+
+    public boolean isWorkday(int day) {
+        if (day % 7 == 0) { // Sonntag
+            return false;
+        }
+
+        if ((day + 1) % 7 == 0) { // Samstag
+            return false;
+        }
+
+        if (((day + 2) % 7 == 0) && this.numberWeekdays <= 4) { // Freitag
+            return false;
+        }
+
+        if (((day + 3) % 7 == 0) && this.numberWeekdays <= 3) { // Donnerstag
+            return false;
+        }
+
+        if (((day + 4) % 7 == 0) && this.numberWeekdays <= 2) { // Mittwoch
+            return false;
+        }
+
+        if (((day + 5) % 7 == 0) && this.numberWeekdays <= 1) { // Dienstag
+            return false;
+        }
+
+        return true;
+
+    }
+
+    public Job work(int time, int day, int hour, Job nextJob) {
+        if ((isWorkday(day)) && ((hour >= 9) && (hour < 17))) {
+
+            if (this.currentJob != null) {
+                this.currentJob.chip();
+                timeWorked++;
+                if(currentJob.getWorkLeft() < 1) {
+                    currentJob.setTimeFinished(time);
+                    finishedJobs.add(currentJob);
+                    currentJob = null;
+                    setNumberFinishedJobs(this.numberFinishedJobs+1);
+                }
+            } else if (nextJob != null){
+                setCurrentJob(nextJob);
+
+            } else { // currentJob und nextJob beide null (nix zu tun)
+                timeWasted++;
+            }
+
+        }
+        return currentJob;
+    }
 }

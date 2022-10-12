@@ -5,6 +5,7 @@ public class Job implements Comparable<Job>{
     private int workLeft;
     private int timeFinished;
     private int waitingTime;
+    private String workedBy;
 
     public Job(int arrivalTime, int duration, int index) {
         this.arrivalTime = arrivalTime;
@@ -13,6 +14,7 @@ public class Job implements Comparable<Job>{
         this.workLeft = duration;
         this.timeFinished = -1;
         this.waitingTime = 0;
+        this.workedBy = "";
     }
 
     public int getIndex() {
@@ -46,6 +48,10 @@ public class Job implements Comparable<Job>{
 
     public void setWaitingTime() {
         this.waitingTime = this.timeFinished - this.arrivalTime;
+    }
+
+    public void setWorkedBy(String workedBy) {
+        this.workedBy = workedBy;
     }
 
     @Override

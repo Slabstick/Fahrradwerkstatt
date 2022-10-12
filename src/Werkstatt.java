@@ -1,22 +1,28 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /*
 ToDo:
     Weitere Verfahren (nur Jobs unter bestimmter Dauer sortieren, nur an Freitagen kurze Jobs abarbeiten)
-    Mehrere Mitarbeiter?
     Möglichkeit Urlaub zu nehmen?
 */
 public class Werkstatt {
 
+    static List<Mitarbeiter> alleMitarbeiter = new ArrayList<>(); //
+
     public static void main(String[] args) {
         Date dateStart = new Date();
         long timeStarted = dateStart.getTime();
+
+        Mitarbeiter marc = new Mitarbeiter("Marc");
+        alleMitarbeiter.add(marc);
+        Mitarbeiter benno = new Mitarbeiter("Benno", 5);
+        alleMitarbeiter.add(benno);
+//        Mitarbeiter jakob = new Mitarbeiter("Jakob", 2);
+//        alleMitarbeiter.add(jakob);
+
         String[] files = new String[] {
                 "./resources/fahrradwerkstatt0.txt",
                 "./resources/fahrradwerkstatt1.txt",
@@ -42,28 +48,41 @@ public class Werkstatt {
 
     }
 
-    public static WorkYear workThroughYear(List<Job> yearList, boolean sortedQueue) {
+    public static WorkYear workThroughYear(List<Job> jobList, boolean sortedQueue) {
         List<Job> queue = new LinkedList<>();
         List<Job> endOfYearList = new LinkedList<>();
-//        Job activeJob = null; -> currentJob in Mitarbeiter Klasse
         int daysInYear = 365;
         int time = 0;
         int timeWasted = 0, timeWorked = 0, freeTime= 0, totalWorkTime = 0; // -> Mitarbeiter Klasse
 
+
+
+
         // Wenn der letzte Eintrag nach dem 365sten Tag ankommt -> Schaltjahr
-        if (yearList.get(yearList.size() - 1).getArrivalTime() > 525000) {
+        if (jobList.get(jobList.size() - 1).getArrivalTime() > 525000) {
             daysInYear = 366;
         }
 
+
         for (int day = 1; day <= daysInYear; day++) {
-
             for (int hour = 0; hour < 24; hour++) {
-
-                for (int minute = 0; minute < 60; minute ++) {
-
-
-
-                    time ++;
+                for (int minute = 0; minute < 60; minute++) {
+                    queueNewJobs(jobList, queue, time);
+                    if (sortedQueue) {
+                        Collections.sort(queue);
+                    }
+                    for (Mitarbeiter mitarbeiter : alleMitarbeiter) {
+                        if (!queue.isEmpty()){
+                            Job nextJob = queue.get(0);
+                            if (mitarbeiter.work(time, day, hour, nextJob) == nextJob) { // wenn der Job an dem der MA gerade arbeitet gleich dem ersten Eintrag der Queue ist
+                                queue.remove(nextJob); // entferne den ersten Eintrag, da an diesem zu arbeiten begonnen wurde
+                                nextJob.setWorkedBy(mitarbeiter.getName()); // speichere Namen des Bearbeiters im Job
+                            }
+                        } else {
+                            mitarbeiter.work(time, day, hour, null); // kein nächster Eintrag in der Warteliste
+                        }
+                    }
+                    time++;
 
 
                 }
@@ -73,13 +92,46 @@ public class Werkstatt {
 
         }
         // Aufräumarbeiten: Alle ausstehenden Aufträge in Liste eintragen
+        for (Mitarbeiter mitarbeiter : alleMitarbeiter) {
+            if (!mitarbeiter.getFinishedJobs().isEmpty()) {
+                endOfYearList.addAll(mitarbeiter.getFinishedJobs());
+            }
+            if (mitarbeiter.getCurrentJob() != null) {
+                endOfYearList.add(mitarbeiter.getCurrentJob());
+            }
+            timeWorked += mitarbeiter.getTimeWorked();
+            timeWasted += mitarbeiter.getTimeWasted();
+            System.out.println("--------------------------------------------------------------------------");
+            System.out.println(mitarbeiter.getName() + ": Jobs erledigt: " + mitarbeiter.getNumberFinishedJobs());
+            mitarbeiter.cleanUp();
+        }
+
+        if (!queue.isEmpty()) {
+            endOfYearList.addAll(queue);
+        }
+
+
+
 
 
         return new WorkYear(endOfYearList, time, timeWorked, timeWasted, freeTime, totalWorkTime, sortedQueue);
     }
 
+    private static void queueNewJobs(List<Job> jobList, List<Job> queue, int time) {
+        List<Job> jobListCopy = new LinkedList<>(jobList);
+        for(Job job : jobListCopy) {
+            if(job.getArrivalTime() < time) {
+                queue.add(job);
+                jobList.remove(job);
+            } else if(job.getArrivalTime() > time) {
+                break;
+            }
+        }
+    }
+
     public static void analyzeYear(WorkYear year){
         List<Job> list = year.finishedYear();
+        StringBuilder unfinishedJobsIndizes = new StringBuilder();
         Job longestWaitingJob = list.get(0);
         int longestWaitingTime = 0, cumulatedWaitingTime = 0, averageWaitingTime, numberFinishedJobs = 0,
             numberUnfinishedJobs = 0, workForNextYear = 0;
@@ -96,6 +148,7 @@ public class Werkstatt {
             } else { // Auftrag wurde nicht beendet
                 numberUnfinishedJobs++; // Addiere 1 zu nicht abgeschlossenen Aufträgen
                 workForNextYear += job.getWorkLeft(); // Addiere ausstehende Arbeitszeit zur Summe für nächstes Jahr
+                unfinishedJobsIndizes.append(job.getIndex()+1).append(" ");
             }
         }
 
@@ -106,6 +159,7 @@ public class Werkstatt {
         System.out.println("Anzahl Aufträge: " + list.size());
         System.out.println("Erledigte Aufträge: " + numberFinishedJobs);
         System.out.println("Unerledigte Aufträge: " + numberUnfinishedJobs);
+        System.out.println("Indizes unerledigter Aufträge: " + unfinishedJobsIndizes);
         System.out.println("Dauer unerledigter Aufträge: " + toHours(workForNextYear));
         System.out.println("Gesamte Arbeitszeit: " + toHours(year.totalWorkTime()));
         System.out.println("Tatsächlich gearbeitet: " + toHours(year.timeWorked()));
