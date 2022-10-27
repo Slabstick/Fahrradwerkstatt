@@ -16,10 +16,10 @@ public class Werkstatt {
 
         Mitarbeiter marc = new Mitarbeiter("Marc");
         alleMitarbeiter.add(marc);
-        Mitarbeiter benno = new Mitarbeiter("Benno", 5);
+        Mitarbeiter benno = new Mitarbeiter("Benno");
         alleMitarbeiter.add(benno);
-//        Mitarbeiter jakob = new Mitarbeiter("Jakob", 2);
-//        alleMitarbeiter.add(jakob);
+        Mitarbeiter jakob = new Mitarbeiter("Jakob", 2);
+        alleMitarbeiter.add(jakob);
 
         String[] files = new String[] {
                 "./resources/fahrradwerkstatt0.txt",
